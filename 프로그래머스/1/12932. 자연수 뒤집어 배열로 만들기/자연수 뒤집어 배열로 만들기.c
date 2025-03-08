@@ -12,17 +12,15 @@ int* solution(long long n) {
 }
 int main() {
     long long n;
-    printf("정수를 입력하세요: ");
+    printf("정수 입력: ");
     scanf("%lld", &n);
 
-    // solution() 호출
     int* result = solution(n);
 
-    // 숫자의 자릿수 계산
     long long temp = n;
     int count = 0;
     if (temp == 0) {
-        count = 1; // 숫자가 0이면 자릿수는 1
+        count = 1; 
     } else {
         while (temp > 0) {
             temp /= 10;
@@ -30,7 +28,6 @@ int main() {
         }
     }
 
-    // 결과 출력
     printf("결과 배열: [");
     for (int i = 0; i < count; i++) {
         printf("%d", result[i]);
@@ -40,7 +37,7 @@ int main() {
     }
     printf("]\n");
 
-    free(result);  // 동적 할당된 메모리 해제
+    free(result); 
 
     return 0;
 }
