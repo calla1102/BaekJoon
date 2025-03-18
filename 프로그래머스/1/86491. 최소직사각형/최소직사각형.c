@@ -8,13 +8,11 @@ int solution(int** sizes, size_t sizes_rows, size_t sizes_cols) {
     int col = 0;
 
     for (int i = 0; i < sizes_rows; i++) {
-        // 큰 값을 row, 작은 값을 col에 저장 (명함을 회전하는 개념)
-        int max_side = (sizes[i][0] > sizes[i][1]) ? sizes[i][0] : sizes[i][1];
-        int min_side = (sizes[i][0] < sizes[i][1]) ? sizes[i][0] : sizes[i][1];
+        int max = (sizes[i][0] > sizes[i][1]) ? sizes[i][0] : sizes[i][1];
+        int min = (sizes[i][0] < sizes[i][1]) ? sizes[i][0] : sizes[i][1];
 
-        // 최대 가로 길이와 최대 세로 길이 갱신
-        if (max_side > row) row = max_side;
-        if (min_side > col) col = min_side;
+        if (max > row) row = max;
+        if (min > col) col = min;
     }
 
     return row * col;
